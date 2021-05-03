@@ -9,6 +9,9 @@ public class HelloWorldServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final ServletOutputStream outputStream = resp.getOutputStream();
+        String input = req.getParameter("param");
+        outputStream.println("<h2>Hello, World!<h2>");
+        outputStream.println(input);
     }
 
     @Override
